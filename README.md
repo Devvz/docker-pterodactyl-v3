@@ -1,4 +1,7 @@
 # Pterodactyl Docker Containers
+
+**V3**
+
 This installation was designed to configure Pterodactyl using three separate Docker containers each individually running one of the major services required for the panel to function properly:
 
 - Pterodactyl (PHP)  
