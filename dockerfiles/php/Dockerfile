@@ -21,7 +21,7 @@ RUN chmod +x /var/www/html/entrypoint.sh \
     && tar --strip-components=1 -xzvf v0.5.5.tar.gz \
     && rm v0.5.5.tar.gz \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && composer install --ansi --no-dev
+    && composer install --ansi --no-dev \
     && mkdir -p /var/www/pterodactyl/logs \
     && useradd -ms /bin/bash nginx \
     && chown -R nginx:nginx *
