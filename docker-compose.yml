@@ -27,8 +27,8 @@ services:
         #build: .
         #image: quay.io/xyelz/docker-pterodactyl-v3
         volumes:
-            - ./files/php/conf:/etc/supervisord.d/pterodactyl-worker.ini #f00z
-            - ./files/php/conf:/etc/supervisord.d/php-fpm-worker.ini #f00z
+            - ./files/php/conf:/etc/supervisord.d/pterodactyl-worker.ini #f00z- tries to keep php artisan running
+            - ./files/php/conf:/etc/supervisord.d/php-fpm-worker.ini #f00z - tries to keep php-fpm up and running
             - ./files/php/conf:/etc/opt/remi/php70/php-fpm.d/www.conf #f00z
             - ./files/php/bin:/var/www/html/entrypoint.sh #f00z - previously included as part of the PHP Dockerfile
             # - ./files/:/etc/supervisor/conf.d/pterodactyl-worker.conf
