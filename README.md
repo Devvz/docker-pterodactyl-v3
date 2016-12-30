@@ -1,11 +1,35 @@
 # Pterodactyl Docker Containers
 This installation was designed to configure Pterodactyl using three separate Docker containers each individually running one of the major services required for the panel to function properly:
 
-- MySQL (MariaDB)  
 - Pterodactyl (PHP)  
+- MySQL (MariaDB)  
 - Web Server (NGINX)
 
 These containers were built with CentOS 7.1 using PHP7.
+
+# Future
+Next steps involve reconfiguring PHP to be on a completely separate server than Pterodactyl so that we can continue adding PHP servers to scale as necessary. It would also be beneficial to configure a Memcached server for additional caching.
+
+## Overview
+
+**docker-compose.yml (creates containers for all services)**
+
+**Dockerfile (configures the image within the container)**
+
+## Deploy
+
+- Move docker-compose.yml to a local directory on the host  
+- Deploy the containers  
+`docker-compose up` This reads the docker-compose.yml file which pulls the image location from Quay.io and then performs the operations within the yml file (creation of containers)
+
+
+
+
+
+
+
+
+
 
 ## Overview
 
@@ -70,12 +94,6 @@ stdout_logfile=/var/www/pterodactyl/html/storage/logs/queue-worker.log`
 `ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/pterodactyl.conf`  
 `systemctl restart nginx`  
 *Log: This can be done via a symlink (somehow) or, alternatively, by simply copying the file into both directories in the `docker-compose.yml`*
-
-## Deploy
-
-- Move docker-compose.yml to a local directory on the host  
-- Deploy the containers  
-`docker-compose up` This reads the docker-compose.yml file which pulls the image location from Quay.io and then performs the operations within the yml file (creation of containers)
 
 ## Questions
 
