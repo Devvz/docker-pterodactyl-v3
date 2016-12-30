@@ -24,6 +24,7 @@ services:
             - sql
         container_name: php1
         hostname: ark-php1
+        # Either "build" or "image" needs to be specified below.
         #build: .
         #image: quay.io/xyelz/docker-pterodactyl-v3
         volumes:
@@ -60,6 +61,7 @@ services:
         image: mariadb:latest
         command: mysqld
         volumes:
+            # What is "dbdata" referring to here? A shared volume of some sort?
             - dbdata:/var/lib/mysql/
         environment:
             - "MYSQL_DATABASE=pterodb"
