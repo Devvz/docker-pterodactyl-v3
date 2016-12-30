@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /var/www/pterodactyl/html
 
-RUN curl -Lo v0.5.5.tar.gz https://github.com/Pterodactyl/Panel/archive/v0.5.5.tar.gz \
+RUN chmod +x /var/www/html/entrypoint.sh \
+    && curl -Lo v0.5.5.tar.gz https://github.com/Pterodactyl/Panel/archive/v0.5.5.tar.gz \
     && tar --strip-components=1 -xzvf v0.5.5.tar.gz \
     && rm v0.5.5.tar.gz \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
