@@ -30,7 +30,7 @@ services:
             - ./files/php/conf/pterodactyl-worker.conf:/etc/supervisord.d/pterodactyl-worker.ini #f00z- tries to keep php artisan running
             - ./files/php/conf/php-fpm-worker.conf:/etc/supervisord.d/php-fpm-worker.ini #f00z - tries to keep php-fpm up and running
             - ./files/php/conf/www.conf:/etc/opt/remi/php70/php-fpm.d/www.conf #f00z
-            - ./files/php/bin/entrypoint.sh:/var/www/pterodactyl/html/entrypoint.sh #f00z - previously included as part of the PHP Dockerfile
+            - ./files/php/bin/entrypoint.sh:/var/www/html/entrypoint.sh #f00z - previously included as part of the PHP Dockerfile
             # - ./files/:/etc/supervisor/conf.d/pterodactyl-worker.conf
             - shared:/var/www/pterodactyl/html/
         environment:
