@@ -4,9 +4,9 @@
 
 This installation was designed to configure Pterodactyl using three separate Docker containers each individually running one of the major services required for the panel to function properly:
 
+- Web Server (NGINX)
 - Pterodactyl (PHP)  
 - MySQL (MariaDB)  
-- Web Server (NGINX)
 
 These containers were built with CentOS 7.1 using PHP7.
 
