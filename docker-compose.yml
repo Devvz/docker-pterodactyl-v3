@@ -67,7 +67,8 @@ services:
             - "MYSQL_ROOT_PASSWORD=pterosqlpassword"
             - "MYSQL_PASSWORD=pterodbpassword"
             - "MYSQL_USER=ptero"
-        networks: web-network-01
+        networks:
+            - web-network-01
         ports:
             - "3306:3306"
 volumes:
