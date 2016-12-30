@@ -24,7 +24,7 @@ For the next version, I'd liek to reconfigure PHP to be on a completely separate
 
 - Move repository to a local directory on the host and ensure docker-compose.yml is at the root
 - Deploy the containers  
-`docker-compose up` This reads the docker-compose.yml file which pulls the image location from Quay.io and then performs the operations within the yml file (creation of containers)
+`docker-compose up` This reads the docker-compose.yml file which pulls the image from wherever specified in the docker-compose.yml file, creates the containers, and then performs the remaining operations contained within the Dockerfile (configuration of containers)
 
 
 
