@@ -25,6 +25,6 @@ RUN curl -Lo v0.5.5.tar.gz https://github.com/Pterodactyl/Panel/archive/v0.5.5.t
     && useradd -ms /bin/bash nginx \
     && chown -R nginx:nginx *
 
-#ENTRYPOINT ["/var/www/html/entrypoint.sh"]
+ENTRYPOINT ["/var/www/html/entrypoint.sh"]
 
 CMD ["supervisord", "-n"]
