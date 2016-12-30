@@ -31,7 +31,7 @@ Next steps involve reconfiguring PHP to be on a completely separate server than 
 
 
 
-## Overview
+## Overview (OLD)
 
 **Dockerfile (configures Pterodactyl/PHP image)**
 - Installs PHP on image (this is actually a shared volume with the PHP and NGINX container)
