@@ -26,6 +26,7 @@ RUN chmod +x /var/www/html/entrypoint.sh \
     && useradd -ms /bin/bash nginx \
     && chown -R nginx:nginx *
 
+# The HTML directory was created in the pterodactyl folder. Should this be /var/www/pterodactyl/html instead?
 ENTRYPOINT ["/var/www/html/entrypoint.sh"]
 
 CMD ["supervisord", "-n"]
