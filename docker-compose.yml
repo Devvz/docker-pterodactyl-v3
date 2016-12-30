@@ -11,10 +11,12 @@ services:
             - "80:80"
             - "443:443"
         volumes:
-            - ./files/
-            - ./files/
-            - ./files/
-            - shared
+            - ./files/:/etc/nginx/conf.d/pterodactyl.conf
+            - ./files/:/etc/nginx/nginx.conf
+            - ./files/:/etc/nginx/conf.d/default.conf
+            # - ./files/:/etc/nginx/sites-available/pterodactyl.conf
+            # - ./files/:/etc/nginx/sites-enabled/pterodactyl.conf
+            - shared:/var/www/pterodactyl/html/
         networks:
             - web-network-01
     php:
@@ -25,11 +27,12 @@ services:
         #build: .
         #image: quay.io/xyelz/docker-pterodactyl-v3
         volumes:
-            - ./files/
-            - ./files/
-            - ./files/
-            - ./files/
-            - shared
+            - ./files/:/etc/supervisord.d/pterodactyl-worker.ini
+            - ./files/:/etc/supervisord.d/php-fpm-worker.ini
+            - ./files/:/etc/opt/remi/php70/php-fpm.d/www.conf
+            - ./files/:/var/www/html/entrypoint.sh
+            # - ./files/:/etc/supervisor/conf.d/pterodactyl-worker.conf
+            - shared:/var/www/pterodactyl/html/
         environment:
             - "db_host=ark-sql1"
             - "db_port=3306"
