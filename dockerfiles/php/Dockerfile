@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /var/www/pterodactyl/html
 
-RUN chmod +x /var/www/html/entrypoint.sh \
+RUN chmod +x /var/www/pterodactyl/html/entrypoint.sh \
     && curl -Lo v0.5.5.tar.gz https://github.com/Pterodactyl/Panel/archive/v0.5.5.tar.gz \
     && tar --strip-components=1 -xzvf v0.5.5.tar.gz \
     && rm v0.5.5.tar.gz \
@@ -27,6 +27,6 @@ RUN chmod +x /var/www/html/entrypoint.sh \
     && chown -R nginx:nginx *
 
 # The HTML directory was created in the pterodactyl folder. Should this be /var/www/pterodactyl/html instead?
-ENTRYPOINT ["/var/www/html/entrypoint.sh"]
+ENTRYPOINT ["/var/www/pterodactyl/html/entrypoint.sh"]
 
 CMD ["supervisord", "-n"]
