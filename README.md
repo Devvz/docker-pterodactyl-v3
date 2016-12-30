@@ -18,7 +18,7 @@ For the next version, I'd liek to reconfigure PHP to be on a completely separate
 
 **docker-compose.yml (creates containers for all services)**
 
-**Dockerfile (configures the image within the container)**
+**Dockerfile (configures the applications within the container)**
 
 ## Deploy
 
