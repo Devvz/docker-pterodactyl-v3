@@ -12,7 +12,7 @@ These containers were built with CentOS 7.1 using PHP7.
 
 **V4**
 
-For the next version, I'd liek to reconfigure PHP to be on a completely separate server than Pterodactyl so that we can continue adding PHP servers to scale as necessary. It would also be beneficial to configure a Memcached server for additional caching.
+For the next version, I'd like to reconfigure PHP to be on a completely separate server than Pterodactyl so that we can continue adding PHP servers to scale as necessary. It would also be beneficial to configure a Memcached server for additional caching.
 
 ## Overview
 
