@@ -23,7 +23,7 @@ For the next version, I'd liek to reconfigure PHP to be on a completely separate
 ## Deploy
 
 - Move repository to a local directory on the host and ensure docker-compose.yml is at the root
-- Apply permissions to the entrypoint.sh file in the local repository
+- Apply permissions to the entrypoint.sh file in the local repository  
 `chmod a+x files/php/bin/entrypoint.sh`
 - Deploy the containers  
 `docker-compose up` This reads the docker-compose.yml file which pulls the image from wherever specified in the docker-compose.yml file, creates the containers based on the specifications in the yml (including volumes, hostname, container name, etc.), and then performs the remaining operations contained within the Dockerfile (installation of applications, configuration of applications, etc.).
