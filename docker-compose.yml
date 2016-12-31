@@ -34,7 +34,7 @@ services:
             # - ./files/:/etc/supervisor/conf.d/pterodactyl-worker.conf
             - shared:/var/www/pterodactyl/html/
         environment:
-            - "db_host=ark-sql1"
+            - "db_host=sql"
             - "db_port=3306"
             - "db_name=pterodb"
             - "db_user=ptero"
