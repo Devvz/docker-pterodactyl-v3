@@ -26,7 +26,6 @@ RUN curl -Lo v0.5.5.tar.gz https://github.com/Pterodactyl/Panel/archive/v0.5.5.t
     && useradd -ms /bin/bash nginx \
     && chown -R nginx:nginx *
 
-# The HTML directory was created in the pterodactyl folder. Should this be /var/www/pterodactyl/html instead?
 ENTRYPOINT ["/var/www/html/entrypoint.sh"]
 
 CMD ["supervisord", "-n"]
